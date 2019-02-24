@@ -1,3 +1,5 @@
+const request = require('request');
+require('dotenv').config();
 const Profile = require('../models/Profile');
 
 module.exports.index = (req, res) => {
@@ -16,7 +18,21 @@ module.exports.register = (req, res) => {
             if(err) {
                 return res.render('index', {message:'try again'});
             }
-            return res.render('index', {message:'success'});
+            let customHeaderRequest = request.defaults({
+                headers: {'User-Agent': 'request'}
+            });
+            let token = process.env.GITHUB_TOKEN;
+            let url = "https://api.github.com/orgs/dsckiet/memberships/" + req.body.github + "?access_token=" + token;
+            customHeaderRequest
+                .put(url)
+                .on('error', (err) => {
+                    console.log(err)
+                    return res.render('index', {message:'try again'});
+                })
+                .on('response', (response) => {
+                    console.log(response.statusCode);
+                    return res.render('index', {message:'success'});
+                });
         });
     });
 };
