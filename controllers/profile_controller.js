@@ -1,11 +1,22 @@
 const Profile = require('../models/Profile');
 
-module.exports.index = function(req, res){
-    return res.render('index');
-}
+module.exports.index = (req, res) => {
+    return res.render('index', {message: ''});
+};
 
-// module.exports.eventDetailsApi = function(req, res){
-//     Event.findById(req.params.id).populate('registrations').exec(function(err, event){
-//         return res.json(event);
-//     });
-// }
+module.exports.register = (req, res) => {
+    Profile.findOne({email: req.body.email}, (err, profile) => {
+        if(err) {
+            return res.render('index', {message: 'try again'});
+        }
+        if(profile) {
+            return res.render('index', {message:'already registered'});
+        }
+        Profile.create(req.body, (err, done) => {
+            if(err) {
+                return res.render('index', {message:'try again'});
+            }
+            return res.render('index', {message:'success'});
+        });
+    });
+};

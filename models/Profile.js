@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
 
 const profileSchema = mongoose.Schema({
-    handle: String,
+    github: String,
+    linkedin: String,
     name: String,
     email: String,
-    rollno: String
+    rollno: String,
+    branch: String,
+    year: String
 },{
     timestamps: true
 });
