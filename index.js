@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const path = require('path');
 const cors = require('cors');
 require('dotenv').config();
 require('./config/dbconnection');
@@ -7,6 +8,7 @@ require('./config/dbconnection');
 app.use(cors());
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false}));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', require('./routes/index'));
 
