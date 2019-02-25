@@ -7,7 +7,8 @@ const profileSchema = mongoose.Schema({
     email: String,
     rollno: String,
     branch: String,
-    year: String
+    year: String,
+    status:{type: Number, default: 0}
 },{
     timestamps: true
 });

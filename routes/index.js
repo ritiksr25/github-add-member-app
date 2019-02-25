@@ -7,6 +7,6 @@ router.get('/', profileController.index );
 
 router.post('/', profileController.register );
 
-// router.post('/events/create', eventsController.createEvent);
+// router.get('/testdsckiet', profileController.test);
 
 module.exports = router;

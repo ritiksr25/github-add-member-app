@@ -18,21 +18,32 @@ module.exports.register = (req, res) => {
             if(err) {
                 return res.render('index', {message:'try again'});
             }
-            let customHeaderRequest = request.defaults({
-                headers: {'User-Agent': 'request'}
-            });
-            let token = process.env.GITHUB_TOKEN;
-            let url = "https://api.github.com/orgs/dsckiet/memberships/" + req.body.github + "?access_token=" + token;
-            customHeaderRequest
-                .put(url)
-                .on('error', (err) => {
-                    console.log(err)
-                    return res.render('index', {message:'try again'});
-                })
-                .on('response', (response) => {
-                    console.log(response.statusCode);
-                    return res.render('index', {message:'success'});
-                });
+            return res.render('index', {message:'success'});
         });
     });
 };
+
+module.exports.admin = (req, res) => {
+    let customHeaderRequest = request.defaults({
+        headers: {'User-Agent': 'request'}
+    });
+    let token = process.env.GITHUB_TOKEN;
+    let url = "https://api.github.com/orgs/dsckiet/memberships/" + req.body.github + "?access_token=" + token;
+    customHeaderRequest
+        .put(url)
+        .on('error', (err) => {
+            console.log(err)
+            return res.render('index', {message:'try again'});
+        })
+        .on('response', (response) => {
+            console.log(response.statusCode);
+            return res.render('index', {message:'success'});
+        });
+};
+
+// module.exports.test = (req, res) => {
+//     Profile.updateMany({}, {status: 0}, (err, updated) => {
+//         if(err) throw err;
+//         return res.send("done");
+//     })
+// };
