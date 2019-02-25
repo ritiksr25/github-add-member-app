@@ -5,13 +5,13 @@
         <div class="card">
             <div>
                 <h6 class="text-center" style="font-weight: 700; margin-top: 16px; margin-bottom: 0;">
-                    <img class="logo-image" src="./assets/images/logo.png" alt="">
+                    <img class="logo-image" src="./assets/images/logo.png" alt="dsc-logo">
                     Developer Student Clubs KIET
                 </h6>
                 <p class="text-center" style="font-size: 12px; font-weight: 500;">powered by</p>
-                <img src="./assets/images/gd.png" width="100%" style="background: #333; padding: 8px 36px;" alt="">
+                <img src="./assets/images/gd.png" width="100%" style="background: #333; padding: 8px 36px;" alt="google-developers">
                 <% if(message) { %>
-                    <% if(message == 'already registered' || message == 'try again') { %>
+                    <% if(message == 'already registered' || message == 'try again' || message == 'invalid details') { %>
                         <div class="text-center alert alert-danger"><%=message%>%></div>
                     <% } else { %>
                         <div class="text-center alert alert-success"><%=message%>%></div>
@@ -22,7 +22,7 @@
                         <input type="text" name="name" placeholder="full name" required>
                     </div>
                     <div>
-                        <input type="text" name="email" placeholder="email" required>
+                        <input type="text" name="email" placeholder="email">
                     </div>
 
                     <div>

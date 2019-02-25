@@ -7,20 +7,24 @@ module.exports.index = (req, res) => {
 };
 
 module.exports.register = (req, res) => {
-    Profile.findOne({email: req.body.email}, (err, profile) => {
-        if(err) {
-            return res.render('index', {message: 'try again'});
-        }
-        if(profile) {
-            return res.render('index', {message:'already registered'});
-        }
-        Profile.create(req.body, (err, done) => {
-            if(err) {
-                return res.render('index', {message:'try again'});
+    if(req.body.email == '' || req.body.email == null || req.body.github == '' || req.body.github == null || req.body.linkedin == '' || req.body.linkedin == null || req.body.rollno == '' || req.body.rollno == null || req.body.year == '' || req.body.year == null || req.body.branch == '' || req.body.branch == null) {
+        return res.render('index', {message: 'invalid details'});
+    } else {
+        Profile.findOne({email: req.body.email}, (err, profile) => {
+            if (err) {
+                return res.render('index', {message: 'try again'});
             }
-            return res.render('index', {message:'success'});
+            if (profile) {
+                return res.render('index', {message: 'already registered'});
+            }
+            Profile.create(req.body, (err, done) => {
+                if (err) {
+                    return res.render('index', {message: 'try again'});
+                }
+                return res.render('index', {message: 'success'});
+            });
         });
-    });
+    }
 };
 
 module.exports.admin = (req, res) => {
