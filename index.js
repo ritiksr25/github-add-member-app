@@ -11,6 +11,9 @@ app.use(express.urlencoded({ extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', require('./routes/index'));
+app.use('/workshop', require('./routes/workshop'));
+
+app.get('/android', (req, res) => { res.redirect('/workshop')});
 
 app.listen(process.env.PORT, (err) => {
    if(err) {

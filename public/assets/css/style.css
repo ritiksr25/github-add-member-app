@@ -12,12 +12,17 @@ body{
     border:0;
 }
 
-.container .col-lg-4{
-    top: 12vh;
+h2{
+    color:#333;
+}
+
+.container .col-lg-4, .container .col-lg-8{
+    top: 11vh;
     margin: 0 auto;
 }
 
 .card{
+    margin-bottom: 16px;
     border-radius: 2px;
     border: 0;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23)
