@@ -37,6 +37,7 @@ const Admin = require('./models/Admin');
 app.use('/auth', require('./routes/auth'));
 app.use('/workshop', require('./routes/workshop'));
 app.use('/admin', require('./routes/admin'));
+app.use('/api', require('./routes/api/admin_api'));
 app.get('/android', (req, res) => { res.redirect('/workshop')});
 
 app.listen(process.env.PORT, (err) => {

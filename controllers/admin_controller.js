@@ -30,3 +30,17 @@ module.exports.approve_workshop = (req, res) => {
         return res.render('workshop_list', {message: 'not authenticated', candidates: ''});
     }
 };
+
+module.exports.attendees_info = (req, res) => {
+    Workshop.find({status: 1}, (err, attendees) => {
+        if(err) return res.status(404).json({message: 'error', attendees: []})
+        return res.json({message: 'success', attendees})
+    })
+};
+
+module.exports.mark_event_attendance = (req, res) => {
+    Workshop.updateOne({attendeeId: req.body.attendeeId}, {status: 2}, (err, updated) => {
+       if(err) return res.status(404).json({message: 'error'});
+       return res.json({message: 'success'});
+    });
+};

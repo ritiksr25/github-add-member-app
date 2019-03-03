@@ -9,7 +9,7 @@ const workshopSchema = mongoose.Schema({
     year: String,
     workshop: String,
     attendeeId: {type: String, default: ""},
-    status: {type: Number, default: 0}
+    status: {type: Number, default: 0} // 1:approved, 2:present
 },{
     timestamps: true
 });
