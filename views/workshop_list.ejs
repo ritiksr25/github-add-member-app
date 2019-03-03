@@ -39,6 +39,9 @@
 </style>
 <section>
     <div class="container">
+        <% if(message) { %>
+            <div class="alert alert-danger"><%=message%></div>
+        <% } %>
         <h2>Android Workshop Attendees</h2>
 
         <table>

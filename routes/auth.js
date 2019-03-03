@@ -9,13 +9,12 @@ router.get('/google/callback',
         failureRedirect: '/'
     }),
     (req, res) => {
-        res.redirect('/admin/dashboard');
+        res.redirect('/dashboard');
     });
 
 router.get('/verify', (req, res) => {
     if (req.user) {
         console.log(req.user);
-
     } else {
         console.log('not auth');
     }
