@@ -9,7 +9,7 @@ router.get('/google/callback',
         failureRedirect: '/'
     }),
     (req, res) => {
-        res.redirect('/dashboard');
+        res.redirect('/admin/dashboard');
     });
 
 router.get('/verify', (req, res) => {
