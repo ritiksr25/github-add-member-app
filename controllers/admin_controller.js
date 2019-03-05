@@ -30,26 +30,34 @@ module.exports.approve_workshop = (req, res) => {
 };
 
 module.exports.attendees_info = (req, res) => {
-    Workshop.find({status: 1}, (err, attendees) => {
-        if (err) return res.status(404).json({message: 'error', attendees: []});
-        return res.json({message: 'success', attendees})
-    })
+    if(req.params.gId === process.env.GOOGLE_ID) {
+        Workshop.find({status: 1}, (err, attendees) => {
+            if (err) return res.status(404).json({message: 'error', attendees: []});
+            return res.json({message: 'success', attendees})
+        });
+    } else{
+        return res.status(200).json({message: 'not authenticated', attendees: []});
+    }
 };
 
 module.exports.mark_event_attendance = (req, res) => {
-    Workshop.updateOne({attendeeId: req.body.attendeeId, status: 1}, {status: 2}, (err, updated) => {
-        if (err) return res.status(404).json({message: 'error'});
-        if (updated.n === 1) return res.json({message: 'success'});
-        else {
-            Workshop.findOne({attendeeId: req.body.attendeeId}, (err, attendee) => {
-                if (err) return res.status(404).json({message: 'error'});
-                if(attendee) {
-                    if (attendee.status === 2) return res.json({message: 'already marked'});
-                    else return res.json({message: 'failure'});
-                } else{
-                    return res.json({message: 'not registered'});
-                }
-            });
-        }
-    });
+    if(req.params.gId === process.env.GOOGLE_ID) {
+        Workshop.updateOne({attendeeId: req.body.attendeeId, status: 1}, {status: 2}, (err, updated) => {
+            if (err) return res.status(404).json({message: 'error'});
+            if (updated.n === 1) return res.json({message: 'success'});
+            else {
+                Workshop.findOne({attendeeId: req.body.attendeeId}, (err, attendee) => {
+                    if (err) return res.status(404).json({message: 'error'});
+                    if (attendee) {
+                        if (attendee.status === 2) return res.json({message: 'already marked'});
+                        else return res.json({message: 'failure'});
+                    } else {
+                        return res.json({message: 'not registered'});
+                    }
+                });
+            }
+        });
+    } else{
+        return res.status(200).json({message: 'not authenticated'});
+    }
 };
