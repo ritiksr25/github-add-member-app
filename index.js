@@ -1,6 +1,7 @@
 const express = require("express");
 const passport = require('passport');
 const path = require('path');
+const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 require('./config/passport')(passport);
@@ -15,6 +16,9 @@ app.use(cors());
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use(cookieParser());
 app.use(session({
