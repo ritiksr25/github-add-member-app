@@ -5,7 +5,7 @@ const workshopController = require('../controllers/workshop_controller');
 
 router.get('/', workshopController.studyjam );
 
-router.post('/', workshopController.register );
+router.post('/', workshopController.registerstudyjam );
 
 // router.get('/testdsckiet', workshopController.test);
 
