@@ -26,3 +26,11 @@ module.exports.register = (req, res) => {
         });
     }
 };
+
+module.exports.studyjam = (req, res) => {
+    res.render("studyjam", {message: ''});
+};
+
+module.exports.registerstudyjam = (req, res) => {
+
+};

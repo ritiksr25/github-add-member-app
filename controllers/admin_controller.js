@@ -67,7 +67,6 @@ module.exports.send_invite = (req, res) => {
                 })
                 .catch(err => {
                     console.log(err);
-                    // res.redirect("/payment");
                 });
         });
     });

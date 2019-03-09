@@ -1,0 +1,94 @@
+<% include partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card">
+                <div style="background: #fff; ">
+                    <!--<h2 class="text-center" style="font-weight: 700; margin-top: 16px; margin-bottom: 16px; padding: auto 32px;">-->
+                        <!--Study Jam-->
+                    <!--</h2>-->
+                    <!--<hr>-->
+                    <div style="padding:36px;">
+                        <h2 style="color: #4285F4;">Google Cloud Study Jam</h2>
+                        <br>
+                        <img class="col-md-6" style="right:0; position: absolute; opacity: 0.6;" width="100%" src="/assets/images/gcloud.png" alt="">
+                        <br><br>
+                        <p style="font-weight: 600; position:relative;"><span style="font-size: 36px; color: #4285F4;">Build, <span style="color: #0F9D58;">Scale</span> & <span style="color: #FFC107;">Innovate</span></span><br>with
+                            <img src="https://pluralsight.imgix.net/course-images/gcp-fundamentals-v2.png" width="84px" alt="">, using tools like BigQuery, App Engine and much more....
+                            <br>
+                            powered by <img src="/assets/images/qwiklabs.svg" width="200px" alt="">
+                            <br><br>** limited seats available. <br>Enteries are based upon the applications
+                            <br><br>For any query, mail us at <a href="mailto:dsckiet@gmail.com">dsckiet@gmail.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div>
+                    <h6 class="text-center" style="font-weight: 700; margin-top: 16px; margin-bottom: 0;">
+                        <img class="logo-image" src="/assets/images/logo.png" alt="dsc-logo">
+                        Developer Student Clubs KIET
+                    </h6>
+                    <p class="text-center" style="font-size: 12px; margin: 0; padding-bottom: 8px;">powered by</p>
+                    <img src="/assets/images/gd.png" width="100%" style="background: #333; padding: 8px 72px;" alt="google-developers">
+                    <% if(message) { %>
+                        <% if(message == 'already registered' || message == 'try again' || message == 'invalid details') { %>
+                        <div class="text-center alert alert-danger"><%=message%>%></div>
+                        <% } else { %>
+                        <div class="text-center alert alert-success"><%=message%>%></div>
+                        <% } %>
+                    <% } %>
+                    <form action="/workshop/" method="post" class="text-center">
+                        <div>
+                            <input type="text" name="name" placeholder="full name" required>
+                        </div>
+                        <div>
+                            <input type="text" name="email" placeholder="email" required>
+                        </div>
+
+                        <div>
+                            <input type="text" name="github" placeholder="github (goelaakash79)" required>
+                        </div>
+
+                        <div>
+                            <input type="text" name="expertise" placeholder="Area of Expertise" required>
+                        </div>
+
+                        <div>
+                            <input type="text" name="interest" placeholder="Area of Interest" required>
+                        </div>
+
+                        <div>
+                            <label for="year">Year: </label>
+                            <select name="year" placeholder="year" required>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+
+                            <label style="margin-left: 16px;" for="branch">Branch: </label>
+                            <select name="branch" placeholder="branch" required>
+                                <option value="ce">CE</option>
+                                <option value="cs">CS</option>
+                                <option value="ei">EI</option>
+                                <option value="en">EN</option>
+                                <option value="ec">EC</option>
+                                <option value="it">IT</option>
+                                <option value="mca">MCA</option>
+                                <option value="me">ME</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button class="btn btn-dark">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include partials/footer %>

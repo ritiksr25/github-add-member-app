@@ -14,6 +14,7 @@ body{
 
 h2{
     color:#333;
+    font-weight: 700;
 }
 
 .container .col-lg-4, .container .col-lg-8{
