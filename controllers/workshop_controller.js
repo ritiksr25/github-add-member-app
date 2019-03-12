@@ -70,7 +70,7 @@ module.exports.studyJamList = (req, res) => {
 module.exports.approveCandidateStudyJam = (req, res) => {
     if(req.user) {
         let idnum = 'DSC-' + String(req.params.id).slice(19, 24).toUpperCase();
-        CloudJam.updateOne({_id: req.body.id}, {attendeeId: idnum, status: 1}, (err, updated) => {
+        CloudJam.updateOne({_id: req.params.id}, {attendeeId: idnum, status: 1}, (err, updated) => {
             if (err) return res.render('cloudjamlist', {message: 'error', attendees: ''});
             res.redirect('/cloud-study-jam/cloudjamlist');
         });
