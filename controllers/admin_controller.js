@@ -6,6 +6,14 @@ module.exports.approve_github = (req, res) => {
     return res.render('index', {message: ''});
 };
 
+module.exports.dashboard = (req, res) => {
+    if(req.user) {
+        res.render('dashboard');
+    } else{
+        res.redirect('/');
+    }
+};
+
 module.exports.generate_attendee_id = (req, res) => {
     if (req.user) {
         let idnum = String(req.params.id).slice(20, 24).toUpperCase();

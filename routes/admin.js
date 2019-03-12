@@ -5,7 +5,9 @@ const adminController = require('../controllers/admin_controller');
 
 router.get('/github', adminController.approve_github );
 
-router.get('/dashboard', adminController.approve_workshop );
+router.get('/approveandroid', adminController.approve_workshop );
+
+router.get('/dashboard', adminController.dashboard );
 
 router.get('/sendinvite', adminController.send_invite );
 

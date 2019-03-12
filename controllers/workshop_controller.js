@@ -52,3 +52,30 @@ module.exports.registerstudyjam = (req, res) => {
         });
     }
 };
+
+module.exports.studyJamList = (req, res) => {
+    if(req.user) {
+        CloudJam.find({}, (err, attendees) => {
+            if (err) {
+                return res.render('cloudjamlist', {message: 'error', attendees: []});
+            } else {
+                return res.render('cloudjamlist', {message: '', attendees: attendees});
+            }
+        });
+    } else{
+        res.render('index')
+    }
+};
+
+module.exports.approveCandidateStudyJam = (req, res) => {
+    if(req.user) {
+        let idnum = 'DSC-' + String(req.params.id).slice(19, 24).toUpperCase();
+        CloudJam.updateOne({_id: req.body.id}, {attendeeId: idnum, status: 1}, (err, updated) => {
+            if (err) return res.render('cloudjamlist', {message: 'error', attendees: ''});
+            res.redirect('/cloud-study-jam/cloudjamlist');
+        });
+    } else{
+        console.log('not auth');
+        return res.render('cloudjamlist', {message: 'not authenticated', attendees: ''});
+    }
+};
