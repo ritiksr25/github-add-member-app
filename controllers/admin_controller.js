@@ -104,3 +104,43 @@ module.exports.mark_event_attendance = (req, res) => {
         return res.status(200).json({message: 'not authenticated'});
     }
 };
+
+module.exports.dscmembers = (req, res) => {
+    if(req.user) {
+        Profile.find({}, (err, members) => {
+            if(err) res.render('dscMembers', {message: 'error', members: ''});
+            return res.render('dscMembers', {message: '', members: members});
+        });
+    } else{
+        res.redirect('/');
+    }
+};
+
+module.exports.dscmember = (req, res) => {
+    if (req.user) {
+        Profile.updateOne({_id: req.params.id}, {status: 1}, (err, updated) => {
+           if(err) throw err;
+           if(updated) {
+               Profile.findOne({_id: req.params.id, status: 1}, (err, profile) => {
+                   let customHeaderRequest = request.defaults({
+                       headers: {'User-Agent': 'request'}
+                   });
+                   let token = process.env.GITHUB_TOKEN;
+                   let url = "https://api.github.com/orgs/dsckiet/memberships/" + profile.github + "?access_token=" + token;
+                   customHeaderRequest
+                       .put(url)
+                       .on('error', (err) => {
+                           console.log(err);
+                           return res.render('dscMembers', {message:'try again', members: ''});
+                       })
+                       .on('response', (response) => {
+                           console.log(response.statusCode);
+                           return res.redirect('/admin/members');
+                       });
+               });
+           }
+        });
+    } else{
+        res.redirect('/');
+    }
+};

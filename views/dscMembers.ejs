@@ -1,0 +1,79 @@
+<% include partials/header %>
+
+<style>
+    section{
+        color: #666;
+        font-weight: 600;
+        margin-top: 40px;
+        overflow-x: hidden;
+    }
+
+    a{
+        font-weight: 700;
+    }
+
+    a:hover{
+        text-decoration: none;
+        color: #333;
+        font-weight: 700;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin-bottom: 32px;
+        border-radius: 4px;
+        background: #fff;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23)
+    }
+
+    td {
+        padding: 16px;
+    }
+
+    h2 {
+        margin: 32px 0;
+        font-weight: 700;
+    }
+</style>
+<section>
+    <div class="container">
+        <% if(message) { %>
+        <div class="alert alert-danger"><%=message%></div>
+        <% } %>
+        <h2>DSC Members List</h2>
+
+        <table>
+            <tr style="font-weight: 700; border-bottom: 2px solid steelblue;">
+                <td>#</td>
+                <td>Full Name</td>
+                <td>Email</td>
+                <td>LinkedIn</td>
+                <td>GitHub</td>
+                <td>Branch</td>
+                <td>Year</td>
+                <td>Status</td>
+            </tr>
+            <% let i = 0; %>
+            <% members.forEach((member) => { %>
+                <tr>
+                    <td><%= ++i %></td>
+                    <td><%= member.name %></td>
+                    <td><%= member.email %></td>
+                    <td><%= member.linkedin %></td>
+                    <td><%= member.github %></td>
+                    <td><%= member.branch %></td>
+                    <td><%= member.year %></td>
+                    <% if(member.status == 0)  { %>
+                    <td><a href="/admin/members/<%=member._id%>">Approve</a></td>
+                    <% } else { %>
+                        <td>Approved</td>
+                    <% } %>
+                </tr>
+            <% }); %>
+        </table>
+    </div>
+</section>
+
+<% include partials/footer %>

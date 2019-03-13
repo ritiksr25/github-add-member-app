@@ -13,4 +13,6 @@ router.get('/sendinvite', adminController.send_invite );
 
 router.get('/workshop/:id', adminController.generate_attendee_id );
 
+router.get('/members', adminController.dscmembers );
+
 module.exports = router;
