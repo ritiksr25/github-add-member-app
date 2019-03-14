@@ -1,4 +1,5 @@
 require('dotenv').config();
+const request = require('request');
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
@@ -118,6 +119,7 @@ module.exports.dscmembers = (req, res) => {
 
 module.exports.dscmember = (req, res) => {
     if (req.user) {
+        console.log(req.user);
         Profile.updateOne({_id: req.params.id}, {status: 1}, (err, updated) => {
            if(err) throw err;
            if(updated) {
@@ -127,6 +129,7 @@ module.exports.dscmember = (req, res) => {
                    });
                    let token = process.env.GITHUB_TOKEN;
                    let url = "https://api.github.com/orgs/dsckiet/memberships/" + profile.github + "?access_token=" + token;
+                   // console.log(url);
                    customHeaderRequest
                        .put(url)
                        .on('error', (err) => {
