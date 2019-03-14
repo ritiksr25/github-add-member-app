@@ -44,6 +44,8 @@
         <% } %>
         <h2>Cloud Study Jam Attendees</h2>
 
+        <a href="/admin/sendinvite" style="font-weight: 700;" class="btn btn-info mb-4">Send Invites</a>
+
         <table>
             <tr style="font-weight: 700; border-bottom: 2px solid steelblue;">
                 <td>#</td>
@@ -56,6 +58,7 @@
                 <td>Expertise</td>
                 <td>Interest</td>
                 <td>Status</td>
+                <td>Invite</td>
             </tr>
             <% let i = 0; %>
             <% attendees.forEach((attendee) => { %>
@@ -78,6 +81,7 @@
                     <% } else { %>
                         <td>Approved</td>
                     <% } %>
+                    <td><a href="/admin/sendinvite/<%=attendee._id%>">Invite</a></td>
                 </tr>
             <% }); %>
         </table>

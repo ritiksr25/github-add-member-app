@@ -47,6 +47,10 @@ input {
     padding: 4px;
 }
 
+textarea {
+    padding: 4px;
+}
+
 label{
     font-size: 14px;
     font-weight: 700;

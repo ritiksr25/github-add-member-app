@@ -1,0 +1,32 @@
+<% include partials/header %>
+
+<style>
+
+</style>
+<section>
+    <div class="container">
+        <% if(message) { %>
+        <div class="alert alert-danger"><%=message%></div>
+        <% } %>
+
+        <div class="row">
+            <div class="col-lg-4 text-center mt-4 pt-4">
+                <img style="margin-bottom: 16px;" src="../assets/images/logo.png" width="80%" alt="">
+            </div>
+
+            <div class="col-lg-8">
+                <h2>create event</h2>
+                <div class="card" style="padding: 16px;">
+                    <form action="/admin/create-event" method="post">
+                        <div class="row">
+
+                            <button class="btn btn-dark">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<% include partials/footer %>
