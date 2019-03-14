@@ -15,6 +15,15 @@ module.exports.dashboard = (req, res) => {
     }
 };
 
+module.exports.signout = (req, res) => {
+  if(req.user) {
+      req.logout();
+      res.redirect('https://accounts.google.com/logout');
+  } else{
+      res.redirect('/');
+  }
+};
+
 module.exports.generate_attendee_id = (req, res) => {
     if (req.user) {
         let idnum = String(req.params.id).slice(20, 24).toUpperCase();

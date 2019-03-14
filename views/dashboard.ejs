@@ -4,7 +4,6 @@
 
     body{
         height: 100vh;
-        overflow-y: hidden;
     }
 
     .card{
@@ -26,10 +25,10 @@
 
     h4{
         text-align: center;
-        border: 4px solid rgba( 63, 244, 170, 0.8);
+        border-bottom: 4px solid rgba( 100, 30, 22, 0.5 );
         border-radius: 4px;
         color: #fff;
-        background: rgba( 63, 244, 170, 0.5 );
+        background: rgba(  100, 30, 22 , 0.5 );
         padding: 16px;
     }
 
@@ -39,19 +38,9 @@
         margin-bottom: 2em;
     }
 
-    .card1{
-        border-top: 4px solid rgb( 100, 30, 22 );
-        background: rgba( 100, 30, 22, 0.5);
-    }
-
-    .card2{
+    .card-even{
         border-top: 4px solid rgb( 27, 79, 114 );
         background: rgba( 27, 79, 114, 0.5 );
-    }
-
-    .card3 {
-        border-top: 4px solid rgb(244, 208, 63);
-        background: rgba(244, 208, 63, 0.5);
     }
 
     a:hover{
@@ -63,30 +52,44 @@
     <h4 class="" style="font-weight: 700; margin-top: 16px; margin-bottom: 0;">
         <img class="logo-image" src="/assets/images/logo.png" alt="dsc-logo">
          Admin Dashboard
+        <a href="/admin/signout" style="float: right; color: #fff; border: 2px solid #fff; font-weight: 700;" class="btn btn-outline-dark">Sign out</a>
     </h4>
+
     <hr>
     <div class="row">
         <a href="/admin/approveandroid" class="col-lg-3">
-            <div class="card">
+            <div class="card card-even">
                 Android Workshop
             </div>
         </a>
 
         <a href="/cloud-study-jam/cloudjamlist" class="col-lg-3">
-            <div class="card card1">
+            <div class="card card-odd">
                 Cloud Study Jam
             </div>
         </a>
 
         <a href="/admin/members" class="col-lg-3">
-            <div class="card card2">
+            <div class="card card-even">
                 Community Members
             </div>
         </a>
 
         <div class="col-lg-3">
-            <div class="card card3">
+            <div class="card card-odd">
                 Projects
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="card card-even">
+                Create Event
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="card card-odd">
+                Events
             </div>
         </div>
     </div>

@@ -9,6 +9,8 @@ router.get('/approveandroid', adminController.approve_workshop );
 
 router.get('/dashboard', adminController.dashboard );
 
+router.get('/signout', adminController.signout);
+
 router.get('/sendinvite', adminController.send_invite );
 
 router.get('/workshop/:id', adminController.generate_attendee_id );
