@@ -43,7 +43,10 @@ app.use('/workshop', require('./routes/workshop'));
 app.use('/admin', require('./routes/admin'));
 app.use('/cloud-study-jam', require('./routes/studyJam'));
 app.use('/api', require('./routes/api/admin_api'));
-app.get('/android', (req, res) => { res.redirect('/workshop')});
+
+app.get('*', (req, res) => {
+   res.render('notfound');
+});
 
 app.listen(process.env.PORT, (err) => {
    if(err) {
