@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="950e7c44-6368-4639-9cbc-c3fb8c2907c8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/views/createEvent.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/createEvent.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/Team.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,84 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/admin_controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1219">
-              <caret line="86" column="37" lean-forward="true" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
-              <folding>
-                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#1;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#1;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#div#1;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#footer#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#footer#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/index.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="64" column="18" lean-forward="true" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/createEvent.ejs">
+        <entry file="file://$PROJECT_DIR$/models/Team.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#section#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/Event.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/dashboard.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="920">
-              <caret line="83" column="42" selection-start-line="83" selection-start-column="42" selection-end-line="83" selection-end-column="42" />
-              <folding>
-                <element signature="e#1230#1306#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/workshop_controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="76" column="11" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/admin.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="10" column="53" lean-forward="true" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+            <state relative-caret-position="230">
+              <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -113,6 +41,7 @@
       <find>profileController</find>
       <find>attendee</find>
       <find>Bootcamp</find>
+      <find>projectSchema</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -165,13 +94,14 @@
         <option value="$PROJECT_DIR$/controllers/admin_controller.js" />
         <option value="$PROJECT_DIR$/views/studyjam.ejs" />
         <option value="$PROJECT_DIR$/views/createEvent.ejs" />
+        <option value="$PROJECT_DIR$/models/Team.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1366" />
+    <option name="y" value="27" />
     <option name="width" value="1366" />
-    <option name="height" value="768" />
+    <option name="height" value="741" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -249,15 +179,17 @@
       <workItem from="1552236630317" duration="6425000" />
       <workItem from="1552376935407" duration="6266000" />
       <workItem from="1552450175755" duration="12219000" />
-      <workItem from="1552545000517" duration="16126000" />
+      <workItem from="1552545000517" duration="21561000" />
+      <workItem from="1552638887404" duration="406000" />
+      <workItem from="1553278433178" duration="700000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112578000" />
+    <option name="totallyTimeSpent" value="119119000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1366" y="0" width="1366" height="768" extended-state="6" />
+    <frame x="0" y="27" width="1366" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49658313" visible="true" weight="0.1854058" />
@@ -274,7 +206,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3042789" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.24834438" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -454,24 +386,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Project.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/workshop_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="76" column="11" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -485,10 +403,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/studyjam.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/event_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/dashboard.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1909">
+          <caret line="83" column="42" selection-start-line="83" selection-start-column="42" selection-end-line="83" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/createEvent.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="26" column="41" lean-forward="true" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/admin_controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1219">
-          <caret line="86" column="37" lean-forward="true" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
+        <state relative-caret-position="343">
+          <caret line="86" column="37" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
           <folding>
             <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
@@ -505,58 +458,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/dashboard.ejs">
+    <entry file="file://$PROJECT_DIR$/models/Event.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="83" column="42" selection-start-line="83" selection-start-column="42" selection-end-line="83" selection-end-column="42" />
-          <folding>
-            <element signature="e#1230#1306#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="184">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.ejs">
+    <entry file="file://$PROJECT_DIR$/controllers/workshop_controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="64" column="18" lean-forward="true" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/studyjam.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+        <state relative-caret-position="343">
+          <caret line="76" column="11" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/admin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="53" lean-forward="true" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+        <state relative-caret-position="230">
+          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/event_controller.js">
+    <entry file="file://$PROJECT_DIR$/models/.editorconfig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Project.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="167">
+          <caret line="10" column="11" lean-forward="true" selection-end-line="17" selection-end-column="68" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Event.js">
+    <entry file="file://$PROJECT_DIR$/models/Team.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/createEvent.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#section#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="230">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
         </state>
       </provider>
     </entry>
