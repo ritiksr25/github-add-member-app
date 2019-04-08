@@ -1,7 +1,7 @@
 <% include partials/header %>
 
 <style>
-    input, textarea, button{
+    input, textarea, button, progress{
         width: 100%;
         margin-bottom: 8px;
         border: 2px solid steelblue;
@@ -25,7 +25,8 @@
                         <input type="text" name="title" placeholder="event name">
                         <label>Description</label>
                         <textarea name="description" rows="2"></textarea>
-                        <input type="file" name="image">
+                        <progress value="0" max="100" id="uploader">0%</progress>
+                        <input type="file" name="image" value="upload" id="fileButton">
                         <label>Start Date</label>
                         <input type="date" name="startDate">
                         <label>End Date</label>
@@ -37,5 +38,41 @@
         </div>
     </div>
 </section>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCzNsCKj3AKJwtGp7LTQ2sSVgi4G4t5Syk",
+        authDomain: "dsc-kiet.firebaseapp.com",
+        databaseURL: "https://dsc-kiet.firebaseio.com",
+        projectId: "dsc-kiet",
+        storageBucket: "dsc-kiet.appspot.com",
+        messagingSenderId: "788060394736"
+    };
+    firebase.initializeApp(config);
+
+    var fileButton = document.getElementById('fileButton');
+    var uploader = document.getElementById('uploader');
+
+    fileButton.addEventListener('change', (e) => {
+        var file = e.target.files[0];
+        var storageRef = firebase.storage().ref('events/' + file.name);
+        // console.log(storageRef)
+        var task = storageRef.put(file);
+        task.on('state_changed', function progress(snapshot) {
+            var percentage = (snapshot.bytesTransferred / snapshot.totalBytes * 100);
+            console.log(percentage);
+            uploader.value = percentage;
+        },
+        function error(err) {
+            console.log(err);
+        },
+        function complete(){
+            console.log("done");
+        })
+    });
+</script>
 
 <% include partials/footer %>

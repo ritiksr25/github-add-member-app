@@ -7,9 +7,9 @@ const teamSchema = mongoose.Schema({
     photo: String,
     github: String,
     email: String,
-    instagram: String,
-    facebook: String,
-    status:{type: Number, default: 0}
+    twitter: String,
+    website: String,
+    status:{type: Number, default: 0} // 1:core 0:dont_add 2:community
 },{
     timestamps: true
 });

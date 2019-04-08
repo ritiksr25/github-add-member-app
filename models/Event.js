@@ -5,11 +5,11 @@ const eventSchema = mongoose.Schema({
     image: String,
     slug: String,
     description: String,
-    startDate: String,
-    endDate: String,
-    status:{type: Number, default: 0} // 1: show, 0: hidden
-},{
-    timestamps: true
+    startDate: Date,
+    endDate: Date,
+    startTime: String,
+    venue: String,
+    status: {type: Number, default: 0} // 1: show, 0: hidden
 });
 
 module.exports = Event = mongoose.model('event', eventSchema);

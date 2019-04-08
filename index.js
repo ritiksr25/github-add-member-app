@@ -17,6 +17,8 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 // app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -35,14 +37,18 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/', require('./routes/index'));
 const Admin = require('./models/Admin');
+const Team = require('./models/Team');
+const Story = require('./models/Story');
+const Event = require('./models/Event');
 
+app.use('/', require('./routes/index'));
 app.use('/auth', require('./routes/auth'));
 app.use('/workshop', require('./routes/workshop'));
 app.use('/admin', require('./routes/admin'));
 app.use('/cloud-study-jam', require('./routes/studyJam'));
 app.use('/api', require('./routes/api/admin_api'));
+app.use('/api/v1', require('./routes/api/v1/web_api'));
 
 app.get('*', (req, res) => {
    res.render('notfound');
