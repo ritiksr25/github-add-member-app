@@ -30,7 +30,7 @@ module.exports.events = (req, res) => {
 
 module.exports.index = (req, res) => {
     Event.find({})
-        .sort({startDate: 1})
+        .sort({startDate: -1})
         .limit(4)
         .exec((err, events) => {
             if(err) return res.status(404).json({message: 'error', story: '', events: ''});
