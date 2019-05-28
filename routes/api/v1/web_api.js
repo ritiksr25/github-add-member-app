@@ -11,4 +11,7 @@ router.get('/index', apiController.index);
 
 router.get('/about', apiController.about);
 
+//submit idea route
+router.post('/ideas', apiController.ideas);
+
 module.exports = router;
