@@ -49,3 +49,39 @@ module.exports.about = (req, res) => {
         return res.json({story, message: 'success'});
     });
 }
+
+module.exports.addidea = (req, res) => {
+    const { name, email, technology, title, description } = req.body;
+    if(!name || !email || !technology || !title || !description){
+        return res.status(400).json({
+            message: 'All fields are mandatory!!'
+        });
+    }
+    const emailFormat = /\S+@\S+\.\S+/;
+    if(emailFormat.test(email)){
+        Idea.create(req.body)
+        .then(() => {
+            return res.status(200).json({ 
+                message: "Thanks! Your idea has been submitted successfully!!" 
+            });
+        })
+        .catch(() => res.status(500).json({
+                message: 'Oops! Something went wrong!!'
+            }));
+    }
+    else{
+        return res.status(400).json({
+            message: 'Please enter a valid email address.'
+        });
+    }
+}
+
+module.exports.ideas = (req, res) => {
+    Idea.find({}, (err, ideas) => {
+        if(err) {
+            return res.status(400).json({message: 'error', ideas: ''});
+        } else {
+            return res.status(200).json({ideas: ideas, message: 'success'});
+        }
+    });
+}

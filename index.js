@@ -41,6 +41,7 @@ const Admin = require('./models/Admin');
 const Team = require('./models/Team');
 const Story = require('./models/Story');
 const Event = require('./models/Event');
+const Idea = require('./models/Idea');
 
 app.use('/', require('./routes/index'));
 app.use('/auth', require('./routes/auth'));
