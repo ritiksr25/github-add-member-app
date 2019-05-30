@@ -77,7 +77,7 @@ module.exports.addidea = (req, res) => {
 }
 
 module.exports.ideas = (req, res) => {
-    Idea.find({}, (err, ideas) => {
+    Idea.find({status: 1}, (err, ideas) => {
         if(err) {
             return res.status(400).json({message: 'error', ideas: ''});
         } else {
